@@ -1,0 +1,27 @@
+server:
+  port: 8082
+file:
+  path: d:/pic/
+  domain: http://localhost:8082
+#  spring.resources.static-locations=file:${file.path}
+spring:
+  resources:
+    static-locations: file:${file.path}
+  application:
+    name: provider-course
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ria_exam?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect #设置创建表的引擎为InnoDB
+    hibernate:
+      ddl-auto: update  #如果没有表，就创建；若存在，则更新
+    properties:
+      hibernate.format_sql: true  #格式化sql

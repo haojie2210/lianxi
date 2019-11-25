@@ -1,0 +1,9 @@
+server:
+  port: 7001
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/haojie2210/lianxi.git
+          search-paths: lianxi/lianxi
